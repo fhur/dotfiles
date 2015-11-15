@@ -1,6 +1,6 @@
 # Aliases
 alias cs='clear'
-alias l='clear;ls -lav'
+alias l='clear;ls -lv'
 alias '..'='cd ..'
 alias '...'='cd ../../'
 
@@ -16,10 +16,12 @@ function reload-bash(){
 }
 
 function c(){
-  clear
-  cd $1 && ls -lav
-}
-
-function to-android(){
-  cp $1 /Users/fhurtado/twilio/authy-android/Authy/app/libs
+  if [ -d "$1" ];
+  then
+    cd "$1";
+    clear;
+    ls -lv;
+  else
+    head -n 40 "$1"
+  fi
 }

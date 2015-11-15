@@ -107,3 +107,6 @@ else \
 fi)'
 
 
+# This adds colored output to ls command
+export CLICOLOR=1
+export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
