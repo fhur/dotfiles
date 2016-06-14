@@ -47,3 +47,9 @@ function xmlclean(){
 function grp(){
   grep -R --color "$1" .
 }
+
+function rep() {
+  num=$1
+  rest="${@:2}"
+  for ((n=0;n<10;n++)); do $rest; done
+}
