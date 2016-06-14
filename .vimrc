@@ -48,7 +48,8 @@ nmap <C-s> :w<CR>
 set clipboard+=unnamedplus
 
 " No backup lines
-set nobackup
+set swapfile
+set dir=~/tmp
 
 " No line wraps
 set nowrap
