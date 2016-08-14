@@ -1,11 +1,33 @@
-" Initialize pathogen
-" https://github.com/tpope/vim-pathogen
-execute pathogen#infect()
-syntax on
-filetype plugin indent on
-set background=dark
+" Initialize Vundle
+set nocompatible              " be iMproved, required
+filetype off                  " required
 
-let g:rainbow_active = 1
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+" My favourite plugins
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'chriskempson/base16-vim'
+Plugin 'ervandew/supertab'
+Plugin 'guns/vim-clojure-static'
+Plugin 'mattn/emmet-vim'
+Plugin 'ntpeters/vim-better-whitespace'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/syntastic'
+Plugin 'tpope/vim-markdown'
+Plugin 'tpope/vim-fireplace'
+Plugin 'tpope/vim-sensible'
+Plugin 'Yggdroot/indentLine'
+Plugin 'nanotech/jellybeans.vim'
+
+call vundle#end()
+filetype plugin indent on
+syntax on
 
 " Map space to zz which makes the scroll center on screen
 nmap <space> zz
@@ -19,7 +41,7 @@ nmap <C-l> <C-w>l
 " Up window
 nmap <C-j> <C-w>j
 " Down window
-nmap <C-k> <C-w>k
+nmap <C-k> <C-w>
 
 " Fast 'go to normal mode' actions
 imap jj <Esc>j
@@ -38,18 +60,8 @@ nmap <Down> <Esc>
 nmap <Left> <Esc>
 nmap <Right> <Esc>
 
-" While in insert mode, Ctrl + S will go to
-" normal mode, :w the current buffer, and go back to
-" insert mode
-imap <C-s> <Esc>:w<CR>i
-nmap <C-s> :w<CR>
-
-" Always copy to the normal/OS clipboard:
-set clipboard+=unnamedplus
-
 " No backup lines
-set swapfile
-set dir=~/tmp
+set nobackup
 
 " No line wraps
 set nowrap
@@ -57,7 +69,7 @@ set nowrap
 " Tabs {
 " Modify the way tabs are displayed
 
-  " The width of a TAB is set to 4
+  " The width of a TAB is set to 4			
   set tabstop=4
 
   " Indents have a width of 4
@@ -81,22 +93,17 @@ set nowrap
 " }
 
 " Set the default colorscheme
-colorscheme hybrid
+colorscheme jellybeans
 
 " Dont create friggin .swp files. That's what git is for
 set nobackup
 
-" NERDTree options
-" Toogle nerd tree
-nmap <C-n> :NERDTreeToggle<CR>
-
-" Fireplace options
-" Evaluate the current buffer
-nmap <C-e> :%Eval<CR>
+" Don't close NERDTree when opening a file
+let NERDTreeQuitOnOpen=0  
 
 " Line numbers {
 " Show relative line numbers
-  set relativenumber
+  set relativenumber 
   set number
 " }
 
@@ -105,10 +112,6 @@ nmap <C-e> :%Eval<CR>
   " Set the font
   if has('gui_running')
     set guifont=Monaco:h12
-
-    " Remove scrollbars
-    set guioptions-=T
-    set guioptions-=r
   endif
 
 " }
