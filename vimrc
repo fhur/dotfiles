@@ -28,6 +28,18 @@ Plugin 'nanotech/jellybeans.vim'
 call vundle#end()
 filetype plugin indent on
 syntax on
+set background=dark
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+let g:rainbow_active = 1
 
 " Map space to zz which makes the scroll center on screen
 nmap <space> zz
@@ -60,6 +72,12 @@ nmap <Down> <Esc>
 nmap <Left> <Esc>
 nmap <Right> <Esc>
 
+" While in insert mode, Ctrl + S will go to
+" normal mode, :w the current buffer, and go back to
+" insert mode
+imap <C-s> <Esc>:w<CR>i
+nmap <C-s> :w<CR>
+
 " No backup lines
 set nobackup
 
@@ -69,7 +87,7 @@ set nowrap
 " Tabs {
 " Modify the way tabs are displayed
 
-  " The width of a TAB is set to 4			
+  " The width of a TAB is set to 4
   set tabstop=4
 
   " Indents have a width of 4
@@ -104,7 +122,7 @@ map <C-n> :NERDTreeToggle<CR>
 
 " Line numbers {
 " Show relative line numbers
-  set relativenumber 
+  set relativenumber
   set number
 " }
 
@@ -113,6 +131,13 @@ map <C-n> :NERDTreeToggle<CR>
   " Set the font
   if has('gui_running')
     set guifont=Monaco:h12
+
+    " Remove scrollbars
+    set guioptions-=T
+    set guioptions-=r
+  else
+    " Always copy to the normal/OS clipboard:
+    set clipboard+=unnamedplus
   endif
 
 " }
