@@ -53,3 +53,7 @@ function rep() {
   rest="${@:2}"
   for ((n=0;n<10;n++)); do $rest; done
 }
+
+function edit-email() {
+  vim /var/mail/$USER
+}
