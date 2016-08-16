@@ -99,7 +99,8 @@ colorscheme jellybeans
 set nobackup
 
 " Don't close NERDTree when opening a file
-let NERDTreeQuitOnOpen=0  
+let NERDTreeQuitOnOpen=0
+map <C-n> :NERDTreeToggle<CR>
 
 " Line numbers {
 " Show relative line numbers
