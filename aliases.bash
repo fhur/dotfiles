@@ -48,12 +48,21 @@ function grp(){
   grep -R --color "$1" .
 }
 
+# rep {n} {command}
+# repeat a command n times
 function rep() {
   num=$1
   rest="${@:2}"
-  for ((n=0;n<10;n++)); do $rest; done
+  for ((n=0;n<$num;n++)); do $rest; done
 }
 
 function edit-email() {
   vim /var/mail/$USER
+}
+
+# jira {ticket id}
+# Example: jira PRP-1234
+# opens a browser window with the given ticket number.
+function jira() {
+  open "https://picnic.atlassian.net/browse/$1"
 }
