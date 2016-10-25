@@ -18,26 +18,19 @@ Plugin 'mattn/emmet-vim'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-markdown'
 Plugin 'tpope/vim-fireplace'
 Plugin 'tpope/vim-sensible'
+Plugin 'tpope/vim-surround'
 Plugin 'Yggdroot/indentLine'
 Plugin 'nanotech/jellybeans.vim'
+
+" Call :PluginInstall after modifying the list of plugins.
 
 call vundle#end()
 filetype plugin indent on
 syntax on
 set background=dark
-
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
 
 let g:rainbow_active = 1
 
@@ -83,6 +76,9 @@ set nobackup
 
 " No line wraps
 set nowrap
+
+" Prevent quotes from being hidden in CSV, json files
+set conceallevel=0
 
 " Tabs {
 " Modify the way tabs are displayed

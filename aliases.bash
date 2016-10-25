@@ -9,6 +9,11 @@ alias gis='clear;git status'
 alias gd='clear;git diff'
 alias gdc='clear;git diff --cached'
 
+# moving stuff around
+alias mv='mv -v'
+alias rm='rm -i -v'
+alias cp='cp -v'
+
 # Function definitions
 
 function reload-bash(){
@@ -60,9 +65,6 @@ function edit-email() {
   vim /var/mail/$USER
 }
 
-# jira {ticket id}
-# Example: jira PRP-1234
-# opens a browser window with the given ticket number.
-function jira() {
-  open "https://picnic.atlassian.net/browse/$1"
+function gup() {
+  git pull origin $(git rev-parse --abbrev-ref HEAD) --rebase
 }
