@@ -20,6 +20,12 @@ function reload-bash(){
   source ~/.bash_profile
 }
 
+# Sanitizes all files in a directory by renaming all files with spaces in their name to '_'
+# e.g. the file 'Foo Bar .csv' will be renamed to 'Foo_Bar_.csv'
+function sanitize_dir() {
+  for f in *\ *; do mv "$f" "${f// /_}"; done
+}
+
 # c DIRECTORY => changes the current dir to DIRECTORY
 # c FILE      => displays the first 40 lines in the file and the line count
 function c(){
