@@ -24,6 +24,7 @@ Plugin 'tpope/vim-sensible'
 Plugin 'tpope/vim-surround'
 Plugin 'Yggdroot/indentLine'
 Plugin 'nanotech/jellybeans.vim'
+Plugin 'venantius/vim-cljfmt'
 
 " Call :PluginInstall after modifying the list of plugins.
 
