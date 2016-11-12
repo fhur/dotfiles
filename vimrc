@@ -58,6 +58,9 @@ imap <C-j> <Esc>j
 imap <C-k> <Esc>k
 imap <C-o> <Esc>o
 
+nmap j jzz
+nmap k kzz
+
 " Force me to use hjkl instead of arrows
 imap <Up> <Esc>
 imap <Down> <Esc>
@@ -106,6 +109,8 @@ set conceallevel=0
   autocmd Filetype xml setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
 
 " }
+
+au BufRead,BufNewFile *.hl setfiletype clojure
 
 " Set the default colorscheme
 colorscheme jellybeans

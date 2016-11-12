@@ -26,6 +26,11 @@ function sanitize_dir() {
   for f in *\ *; do mv "$f" "${f// /_}"; done
 }
 
+# Performs a grep search
+function search() {
+  grep -R "$1" ./ --color=never
+}
+
 # c DIRECTORY => changes the current dir to DIRECTORY
 # c FILE      => displays the first 40 lines in the file and the line count
 function c(){
