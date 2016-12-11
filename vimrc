@@ -11,7 +11,6 @@ Plugin 'VundleVim/Vundle.vim'
 " My favourite plugins
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'chriskempson/base16-vim'
 Plugin 'ervandew/supertab'
 Plugin 'guns/vim-clojure-static'
 Plugin 'mattn/emmet-vim'
@@ -25,13 +24,14 @@ Plugin 'tpope/vim-surround'
 Plugin 'Yggdroot/indentLine'
 Plugin 'nanotech/jellybeans.vim'
 Plugin 'venantius/vim-cljfmt'
-
 " Call :PluginInstall after modifying the list of plugins.
 
 call vundle#end()
 filetype plugin indent on
 syntax on
-set background=dark
+set background=light
+" Set the default colorscheme
+colorscheme solarized
 
 let g:rainbow_active = 1
 
@@ -112,8 +112,6 @@ set conceallevel=0
 
 au BufRead,BufNewFile *.hl setfiletype clojure
 
-" Set the default colorscheme
-colorscheme jellybeans
 
 " Dont create friggin .swp files. That's what git is for
 set nobackup
