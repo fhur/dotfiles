@@ -58,9 +58,6 @@ imap <C-j> <Esc>j
 imap <C-k> <Esc>k
 imap <C-o> <Esc>o
 
-nmap j jzz
-nmap k kzz
-
 " Force me to use hjkl instead of arrows
 imap <Up> <Esc>
 imap <Down> <Esc>
