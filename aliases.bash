@@ -91,3 +91,15 @@ function push() {
     esac
   done
 }
+
+function force-push() {
+  current_branch=$(git rev-parse --abbrev-ref HEAD)
+  while true; do
+    read -p "push to origin $current_branch?" yn
+    case $yn in
+        [Yy]* ) git push origin $current_branch --force-with-lease; break;;
+        [Nn]* ) echo "aborting"; break;;
+        * ) echo "Please answer yes or no.";;
+    esac
+  done
+}
