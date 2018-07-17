@@ -13,3 +13,6 @@ export HISTFILE=~/.bash_eternal_history
 PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 
 GIT_PS1_SHOWSTASHSTATE=true
+
+# Set Java 8 as the default java version
+export JAVA_HOME="$(/usr/libexec/java_home -v 1.8)"
