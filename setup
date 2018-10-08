@@ -12,3 +12,7 @@ echo "source $(pwd)/git-prompt.sh" >> ~/.bash_profile
 echo "source $(pwd)/ps1.bash" >> ~/.bash_profile
 echo "source $(pwd)/aliases.bash" >> ~/.bash_profile
 echo "source $(pwd)/exports.bash" >> ~/.bash_profile
+
+# You will also need to install vim-plug (the neovim package manager)
+# See https://github.com/junegunn/vim-plug for details.
+# Make sure vimrc is up to date with vim-plug's installation guides

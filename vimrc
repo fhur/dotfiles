@@ -3,35 +3,33 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call plug#begin('~/.local/share/nvim/plugged')
 " let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
 
 " My favourite plugins
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'ervandew/supertab'
-Plugin 'guns/vim-clojure-static'
-Plugin 'mattn/emmet-vim'
-Plugin 'ntpeters/vim-better-whitespace'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'scrooloose/nerdtree'
-Plugin 'tpope/vim-markdown'
-Plugin 'tpope/vim-fireplace'
-Plugin 'tpope/vim-sensible'
-Plugin 'tpope/vim-surround'
-Plugin 'Yggdroot/indentLine'
-Plugin 'nanotech/jellybeans.vim'
-Plugin 'venantius/vim-cljfmt'
-" Call :PluginInstall after modifying the list of plugins.
+Plug 'altercation/vim-colors-solarized'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'ervandew/supertab'
+Plug 'guns/vim-clojure-static'
+Plug 'mattn/emmet-vim'
+Plug 'ntpeters/vim-better-whitespace'
+Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-markdown'
+Plug 'tpope/vim-fireplace'
+Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-surround'
+Plug 'Yggdroot/indentLine'
+Plug 'nanotech/jellybeans.vim'
+Plug 'venantius/vim-cljfmt'
+" Call :PlugInstall after modifying the list of plugins.
 
-call vundle#end()
+call plug#end()
 filetype plugin indent on
 syntax on
 set background=light
 " Set the default colorscheme
-colorscheme solarized
+colorscheme jellybeans
 
 let g:rainbow_active = 1
 
