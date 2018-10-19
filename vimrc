@@ -7,21 +7,26 @@ call plug#begin('~/.local/share/nvim/plugged')
 " let Vundle manage Vundle, required
 
 " My favourite plugins
+Plug 'HerringtonDarkholme/yats.vim'
+Plug 'Yggdroot/indentLine'
+Plug 'airblade/vim-gitgutter'
 Plug 'altercation/vim-colors-solarized'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'editorconfig/editorconfig-vim'
 Plug 'ervandew/supertab'
 Plug 'guns/vim-clojure-static'
 Plug 'mattn/emmet-vim'
+Plug 'nanotech/jellybeans.vim'
 Plug 'ntpeters/vim-better-whitespace'
+Plug 'pangloss/vim-javascript'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
-Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-fireplace'
+Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
-Plug 'Yggdroot/indentLine'
-Plug 'nanotech/jellybeans.vim'
 Plug 'venantius/vim-cljfmt'
+
 " Call :PlugInstall after modifying the list of plugins.
 
 call plug#end()
@@ -108,8 +113,17 @@ set conceallevel=0
 au BufRead,BufNewFile *.hl setfiletype clojure
 
 
+" enable highlighting and stripping whitespace on save by default, use respectively
+let g:better_whitespace_enabled=1
+let g:strip_whitespace_on_save=1
+
+" show hidden whitespace characters
+" set list
+" set listchars=tab:→\ ,space:·,nbsp:␣,trail:•,eol:¶,precedes:«,extends:»
+
 " Dont create friggin .swp files. That's what git is for
 set nobackup
+set noswapfile
 
 " Don't close NERDTree when opening a file
 let NERDTreeQuitOnOpen=0
@@ -120,6 +134,9 @@ map <C-n> :NERDTreeToggle<CR>
   set relativenumber
   set number
 " }
+
+" Add indent guides for tabs
+set list lcs=tab:\|·
 
 " MacVim specific options {
 
@@ -136,3 +153,11 @@ map <C-n> :NERDTreeToggle<CR>
   endif
 
 " }
+
+
+" Things to ignore for Ctrl-P
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/](node_modules|dist)$',
+  \ 'file': '\v\.(exe|so|dll)$',
+  \ 'link': 'some_bad_symbolic_links',
+  \ }

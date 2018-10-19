@@ -16,3 +16,6 @@ GIT_PS1_SHOWSTASHSTATE=true
 
 # Set Java 8 as the default java version
 export JAVA_HOME="$(/usr/libexec/java_home -v 1.8)"
+
+export VISUAL=nvim
+export EDITOR="$VISUAL"

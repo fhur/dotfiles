@@ -48,20 +48,8 @@ function c(){
   fi
 }
 
-function ga(){
-  git add *$1*
-}
-
-function puts-cmd(){
-  which $1 | xargs cat
-}
-
 function xmlclean(){
   xmllint --format $1 --output $1
-}
-
-function grp(){
-  grep -R --color "$1" .
 }
 
 # rep {n} {command}
@@ -102,4 +90,8 @@ function force-push() {
         * ) echo "Please answer yes or no.";;
     esac
   done
+}
+
+function pr-comments() {
+  git commit -m "PR comments and tweaks"
 }
