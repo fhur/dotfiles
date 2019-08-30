@@ -1,6 +1,6 @@
 # Aliases
 alias cs='clear'
-alias l='clear;ls -lh'
+alias l='clear;ls -lavtr'
 alias '..'='cd ..'
 alias '...'='cd ../../'
 
@@ -39,7 +39,7 @@ function c(){
   then
     cd "$1";
     clear;
-    ls -lv;
+    ls -lavtr;
   elif [ -f "$1" ];
   then
     head -n 40 "$1" && echo "Lines: " && wc -l "$1"
