@@ -6,7 +6,7 @@ ln vimrc $HOME/.vimrc
 # Hard link .gitconfig
 ln gitconfig $HOME/.gitconfig
 
-echo "# Auto generated from dotfiles/setup.sh " >> ~/.bash_profile
+echo "# Auto generated from dotfiles/setup" >> ~/.bash_profile
 echo "source $(pwd)/git-completion.bash" >> ~/.bash_profile
 echo "source $(pwd)/git-prompt.sh" >> ~/.bash_profile
 echo "source $(pwd)/ps1.bash" >> ~/.bash_profile

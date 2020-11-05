@@ -1,6 +1,6 @@
 # Aliases
 alias cs='clear'
-alias l='clear;ls -lavtr'
+alias l='clear;ls -lhav'
 alias '..'='cd ..'
 alias '...'='cd ../../'
 
@@ -95,3 +95,19 @@ function force-push() {
 function pr-comments() {
   git commit -m "PR comments and tweaks"
 }
+
+
+# Adds a new ~/.skipdir alias
+function sd-add() {
+  echo "alias 'sd-$1'='cd $(pwd)'" >> ~/.skipdir
+  cat ~/.skipdir
+  source ~/.skipdir
+}
+
+# Lists existing ~/.skipdir aliases
+function sd-list() {
+  cat ~/.skipdir
+}
+
+# reloads existing ~/.skipdir aliases
+source ~/.skipdir
