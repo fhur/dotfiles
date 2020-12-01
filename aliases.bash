@@ -68,17 +68,7 @@ function gup() {
   git pull origin $(git rev-parse --abbrev-ref HEAD) --rebase
 }
 
-function push() {
-  current_branch=$(git rev-parse --abbrev-ref HEAD)
-  while true; do
-    read -p "push to origin $current_branch?" yn
-    case $yn in
-        [Yy]* ) git push origin $current_branch; break;;
-        [Nn]* ) echo "aborting"; break;;
-        * ) echo "Please answer yes or no.";;
-    esac
-  done
-}
+alias push='git push'
 
 function force-push() {
   current_branch=$(git rev-parse --abbrev-ref HEAD)
